@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>Bench-20221215-234913</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: right; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet=v0.13.2, OS=Windows 11 (10.0.22000.1219/21H2)
+AMD Ryzen 7 5800X, 1 CPU, 16 logical and 8 physical cores
+.NET SDK=7.0.100
+  [Host]     : .NET 6.0.11 (6.0.1122.52304), X64 RyuJIT AVX2
+  DefaultJob : .NET 6.0.11 (6.0.1122.52304), X64 RyuJIT AVX2
+</code></pre>
+<pre><code></code></pre>
+
+<table>
+<thead><tr><th>       Method</th><th>Size</th><th>Mean</th><th>Error</th><th>StdDev</th><th>Gen0</th><th>Gen1</th><th>Allocated</th>
+</tr>
+</thead><tbody><tr><td>ToArray_Init</td><td>1000</td><td>8.430 &mu;s</td><td>0.0251 &mu;s</td><td>0.0222 &mu;s</td><td>0.2289</td><td>-</td><td>3.93 KB</td>
+</tr><tr><td>ImmutableArray_Init</td><td>1000</td><td>8.216 &mu;s</td><td>0.0595 &mu;s</td><td>0.0556 &mu;s</td><td>0.2289</td><td>-</td><td>3.93 KB</td>
+</tr><tr><td>List_Init</td><td>1000</td><td>8.924 &mu;s</td><td>0.0340 &mu;s</td><td>0.0301 &mu;s</td><td>0.2289</td><td>-</td><td>3.96 KB</td>
+</tr><tr><td>ImmutableList_Init</td><td>1000</td><td>18.874 &mu;s</td><td>0.1774 &mu;s</td><td>0.1659 &mu;s</td><td>3.1128</td><td>0.6104</td><td>50.86 KB</td>
+</tr></tbody></table>
+</body>
+</html>
